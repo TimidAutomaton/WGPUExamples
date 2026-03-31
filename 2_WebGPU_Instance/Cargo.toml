@@ -1,0 +1,9 @@
+[package]
+name = "WGPUInstance"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+winit = "0.30"
+wgpu = "26.0.1"
+pollster = "0.4"

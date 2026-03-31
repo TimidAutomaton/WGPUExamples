@@ -1,0 +1,11 @@
+[package]
+name = "PipelineCreation"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+winit = "0.30"
+wgpu = "26.0.1"
+pollster = "0.4"
+bytemuck = "1.23.1"
+env_logger = "0.10"
