@@ -4,13 +4,13 @@ A basic implementation of uniform buffers. This looks a lot like implementing a 
 We create a variable that gets incremented every frame and use it to spin the example object by storing it in a uniform buffer and passing it into the shader.
 
 To create a uniform, we need to do the following:
-    - Create the data
-    - Create a buffer marked as uniform and add the data to the buffer
-    - Create a bind group layout that describes a container that holds the previous buffers and any other desired buffers.
-    - Create a bind group and add the buffers in the locations described by the layout.
-    - Add the bind group layout to create_pipeline_layout() -> bind_group_layouts: &[] array
-    - Set the bind group in the render pass 
-    - Create matching variables in shader with matching @group(n) @binding(m) indices and declared with var<uniform> 
+   - Create the data
+   - Create a buffer marked as uniform and add the data to the buffer
+   - Create a bind group layout that describes a container that holds the previous buffers and any other desired buffers.
+   - Create a bind group and add the buffers in the locations described by the layout.
+   - Add the bind group layout to create_pipeline_layout() -> bind_group_layouts: &[] array
+   - Set the bind group in the render pass 
+   - Create matching variables in shader with matching @group(n) @binding(m) indices and declared with var<uniform> 
 
 # Program Structure
 
