@@ -5,7 +5,7 @@ pub struct AppGraphicsEngine {
 
 impl AppGraphicsEngine {
     pub fn new(device: &wgpu::Device, config: &wgpu::SurfaceConfiguration) -> Self {
-        let triangle_shader = device.create_shader_module(include_wgsl!("../../resources/triangle_shader2.wgsl"));
+        let triangle_shader = device.create_shader_module(include_wgsl!("../../resources/triangle_shader.wgsl"));
 
         let pipeline_layout = device.create_pipeline_layout(
             &wgpu::PipelineLayoutDescriptor {
@@ -89,12 +89,15 @@ impl AppGraphicsEngine {
             rpass.set_pipeline(&self.pipeline);
 
             // I made the shaders to look a certain way given the following settings.
-            //  Put whatever values you want to, these are just what I set for each shader
+            //  Put whatever values you want to for the instances, these are just what I set for each shader
+            //      The shaders expect a certain amount of vertices, so modifying this will cause issues.
 
             // triangle_shader: 3 vertices and 3 instances
             // triangle_shader2: 3 vertices and 4 instances
             // dreamcast_logo_shader: 6 vertices and 110 instances
             // flower_spiral: 6 vertices and 110 instances (I messed up the spiral shader and thought it looked cool)
+
+            // The spiral shaders work by creating rectangular strips from two triangles and using them to draw lines around a spiral shape
 
             rpass.draw(0..3, 0..4);
         }

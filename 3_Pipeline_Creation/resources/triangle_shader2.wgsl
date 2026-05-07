@@ -9,7 +9,7 @@ const ROTATION_SHIFT: f32 = 2.0 * PI / 7.0; // Amount a triangle rotates per ins
 
 // draw a triangle using the indices by drawing points around a circle
 fn get_vertex_pos(v_index: u32, i_index: u32) -> vec3<f32> {
-    var rot_offset = ROTATION_SHIFT * f32(i_index); // Rotate the triangle 60 degrees for each instance
+    var rot_offset = ROTATION_SHIFT * f32(i_index); // Rotate the triangle by ROTATION_SHIFT for each instance
     var rotation = (2.0 * PI / 3.0) * f32(v_index); // Create a triangle by rotating 120 degrees around a circle each v_index (repeats after 3 vertices)
     var x = cos(rotation + rot_offset) * TRIANGLE_SCALE;
     var y = sin(rotation + rot_offset) * TRIANGLE_SCALE;

@@ -1,3 +1,6 @@
 /1_Window/target
 /2_WebGPU_Instance/target
 /3_Pipeline_Creation/target
+/4_Vertex_buffers/target
+/5_Uniform_Buffers/target
+/6_Storage_Buffers/target
